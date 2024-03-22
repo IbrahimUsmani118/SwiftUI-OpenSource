@@ -1,30 +1,27 @@
-import { useCallback, useEffect, useState } from 'react'
-import Button from '../components/Button'
-import ClickCount from '../components/ClickCount'
-import styles from '../styles/home.module.css'
-
-function throwError() {
-  console.log(
-    // The function body() is not defined
-    document.body()
-  )
-}
+import React, { useCallback, useEffect, useState } from 'react';
+import { Button, ClickCount, Form } from '../components';
+import styles from '../styles/home.module.css';
 
 function Home() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   const increment = useCallback(() => {
-    setCount((v) => v + 1)
-  }, [setCount])
+    setCount((v) => v + 1);
+  }, [setCount]);
 
   useEffect(() => {
     const r = setInterval(() => {
-      increment()
-    }, 1000)
+      increment();
+    }, 1000);
 
     return () => {
-      clearInterval(r)
-    }
-  }, [increment])
+      clearInterval(r);
+    };
+  }, [increment]);
+
+  const handleSubmit = (formData) => {
+    console.log('Form submitted:', formData);
+    // Add form submission logic here
+  };
 
   return (
     <main className={styles.main}>
@@ -49,23 +46,17 @@ function Home() {
       </div>
       <hr className={styles.hr} />
       <div>
-        <p>
-          The button below will throw 2 errors. You'll see the error overlay to
-          let you know about the errors but it won't break the page or reset
-          your state.
-        </p>
-        <Button
-          onClick={(e) => {
-            setTimeout(() => document.parentNode(), 0)
-            throwError()
-          }}
-        >
-          Throw an Error
-        </Button>
+        <p>Sample button component.</p>
+        <Button onClick={() => console.log('Button clicked')}>Sample Button</Button>
+      </div>
+      <hr className={styles.hr} />
+      <div>
+        <p>Form component.</p>
+        <Form onSubmit={handleSubmit} />
       </div>
       <hr className={styles.hr} />
     </main>
-  )
+  );
 }
 
-export default Home
+export default Home;
