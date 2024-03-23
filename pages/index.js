@@ -40,11 +40,7 @@ function Home() {
         <p>Current value: {count}</p>
       </div>
       <hr className={styles.hr} />
-      <div>
-        <p>Component with state.</p>
-        <ClickCount />
-      </div>
-      <hr className={styles.hr} />
+      
       <div>
         <p>Sample button component.</p>
         <Button onClick={() => console.log('Button clicked')}>Sample Button</Button>
