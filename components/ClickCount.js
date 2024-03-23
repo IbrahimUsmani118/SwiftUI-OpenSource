@@ -1,62 +1,15 @@
-// Home.js
-import React, { useCallback, useEffect, useState } from 'react';
-import { Button, ClickCount, Form } from '../components';
-import styles from '../styles/home.module.css';
+import React, { useEffect } from 'react';
 
-function Home() {
-  const [count, setCount] = useState(0);
-  const increment = useCallback(() => {
-    setCount((v) => v + 1);
-  }, [setCount]);
-
+function ClickCount({ count, setCount }) {
   useEffect(() => {
-    const r = setInterval(() => {
-      increment();
+    const interval = setInterval(() => {
+      setCount((prevCount) => prevCount + 1); // Increment count
     }, 1000);
 
-    return () => {
-      clearInterval(r);
-    };
-  }, [increment]);
+    return () => clearInterval(interval); // Cleanup interval
+  }, [setCount]);
 
-  const handleSubmit = (formData) => {
-    console.log('Form submitted:', formData);
-    // Add form submission logic here
-  };
-
-  return (
-    <main className={styles.main}>
-      <h1>Fast Refresh Demo</h1>
-      <p>
-        Fast Refresh is a Next.js feature that gives you instantaneous feedback
-        on edits made to your React components, without ever losing component
-        state.
-      </p>
-      <hr className={styles.hr} />
-      <div>
-        <p>
-          Auto incrementing value. The counter won't reset after edits or if
-          there are errors.
-        </p>
-        <p>Current value: {count}</p>
-        <ClickCount count={count} />
-      </div>
-      <hr className={styles.hr} />
-      
-      <div>
-        <p>Sample button component.</p>
-        <Button onClick={() => console.log('Button clicked')} className={styles.button}>
-          Sample Button
-        </Button>
-      </div>
-      <hr className={styles.hr} />
-      <div>
-        <p>Form component.</p>
-        <Form onSubmit={handleSubmit} />
-      </div>
-      <hr className={styles.hr} />
-    </main>
-  );
+  return null; // No visible rendering
 }
 
-export default Home;
+export default ClickCount;

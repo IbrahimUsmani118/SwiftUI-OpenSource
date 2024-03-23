@@ -1,22 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { Button, ClickCount, Form } from '../components';
+import React, { useState } from 'react';
+import { Form } from '../components';
+import ClickCount from '../components/ClickCount'; // Import ClickCount component
+import ButtonWithCount from '../components/ButtonWithCount'; // Import ButtonWithCount component
 import styles from '../styles/home.module.css';
+import buttonStyles from '../components/Button.module.css';
 
 function Home() {
   const [count, setCount] = useState(0);
-  const increment = useCallback(() => {
-    setCount((v) => v + 1);
-  }, [setCount]);
-
-  useEffect(() => {
-    const r = setInterval(() => {
-      increment();
-    }, 1000);
-
-    return () => {
-      clearInterval(r);
-    };
-  }, [increment]);
 
   const handleSubmit = (formData) => {
     console.log('Form submitted:', formData);
@@ -32,19 +22,23 @@ function Home() {
         state.
       </p>
       <hr className={styles.hr} />
+      <section>
       <div>
         <p>
           Auto incrementing value. The counter won't reset after edits or if
           there are errors.
         </p>
         <p>Current value: {count}</p>
+        <ClickCount count={count} setCount={setCount} /> {/* Render ClickCount component and pass count */}
       </div>
       <hr className={styles.hr} />
-      
       <div>
-        <p>Sample button component.</p>
-        <Button onClick={() => console.log('Button clicked')}>Sample Button</Button>
+        <p>Button component with count.</p>
+        <ButtonWithCount count={count} setCount={setCount} className={buttonStyles.btn}>
+          Clicks: {count}
+        </ButtonWithCount>
       </div>
+      </section>
       <hr className={styles.hr} />
       <div>
         <p>Form component.</p>
