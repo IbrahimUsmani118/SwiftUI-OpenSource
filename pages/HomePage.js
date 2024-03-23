@@ -9,4 +9,13 @@ const HomePage = () => {
   );
 };
 
+export async function getServerSideProps() {
+  // Fetch data here if needed
+  return {
+    props: {
+      // Pass data as props if needed
+    },
+  };
+}
+
 export default HomePage;
