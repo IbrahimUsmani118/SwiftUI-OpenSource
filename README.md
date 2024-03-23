@@ -8,14 +8,16 @@ Clone this Repo: Pull down a copy of this project to your local machine.
 Fire Up Your Terminal: Navigate to the project folder.
 
 To install dependencies to grab all the goodies we need:
-` ` `
+
+```
 npm install 
-` ` ` 
+``` 
 
 Start the Party, fire up the development server: 
-` ` ` 
+
+``` 
 npm run dev
-` ` `
+```
 
 What's Inside?
 This project isn't just about looks – it's got the brains to match! Here are some highlights:
