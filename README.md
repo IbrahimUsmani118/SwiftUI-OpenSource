@@ -2,7 +2,7 @@ Welcome to Our Next.js Adventure! 🚀
 Hey there, and welcome to our Next.js project! This isn't just any old web app – it's the start of something awesome. Whether you're a seasoned developer or just getting started, we've got everything you need to dive in and make magic happen.
 
 Let's Get Started!
-To kick things off and see this baby in action, here's what you need to do:
+To kick things off, here's what you need to do:
 
 Clone this Repo: Pull down a copy of this project to your local machine.
 Fire Up Your Terminal: Navigate to the project folder.
