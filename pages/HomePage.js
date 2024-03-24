@@ -4,7 +4,8 @@ const HomePage = () => {
   return (
     <div>
       <h1>Home Page</h1>
-      {/* Your home page content goes here */}
+      <h2>Welcome to the SwiftUI-OpenSource Project!</h2>
+      <p>Feel free to contribute whatever you feel can make a SwiftUI IDE that's multiplatform!</p>
     </div>
   );
 };
