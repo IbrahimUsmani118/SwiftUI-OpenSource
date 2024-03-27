@@ -22,13 +22,6 @@ function Home() {
             state.
           </p>
         </header>
-        <nav className={styles.nav}>
-          <ul className={styles.navList}>
-            <li className={styles.navList}><button onClick={() => {}}>About</button></li>
-            <li className={styles.navList}><button onClick={() => {}}>Home</button></li>
-            <li className={styles.navList}><button onClick={() => {}}>Contact</button></li>
-          </ul>
-        </nav>
         <section className={styles.section}>
           <div className={styles.feature}>
             <h2 className={styles.featureTitle}>Button Click Counter</h2>
