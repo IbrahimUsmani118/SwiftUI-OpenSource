@@ -4,7 +4,8 @@ const ContactPage = () => {
   return (
     <div>
       <h1>Contact Page</h1>
-      {/* Your contact page content goes here */}
+        <h2>Phone Number: ###-###-####</h2>
+        <h2>Email: user@mail.com</h2>
     </div>
   );
 };
